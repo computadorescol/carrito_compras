@@ -1,7 +1,13 @@
 import { useContext } from "react"
 import { CarritoContext } from "../context/CarritoContext"
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+import { useState } from  "react" ;
+import axios from "axios";
 
 export const CarritoPage = () => {
+
+    const [preferenceId, setPreferenceId] = useState(null);
+    initMercadoPago('TEST-29661ec8-ef11-447c-84d9-d571e8cb2cc1'); 
 
     const { listaCompras, aumentarCantidad, disminuirCantidad, eliminarCompra } = useContext(CarritoContext)
 
@@ -13,6 +19,27 @@ export const CarritoPage = () => {
 
         print()
     }
+    const createPreference = async ()=>{
+        try {   		
+            const response = await axios.post ("http://localhost:8080/create_preference ",{
+            title   :  "sortija white gold  ",
+            price   : 9 ,                        
+            description : " anillo de bodas ",
+            quantity : 1,
+                     });
+            const {id} = response.data;
+            return id ;
+            }  catch (error) {
+                console.log(error);
+                   }
+                };
+                        
+      const handleBuy= async ()=> {
+             const id = await createPreference();
+             if (id) { 
+               setPreferenceId(id) ;
+               }
+            } ;
 
     return (
         <>
@@ -64,10 +91,13 @@ export const CarritoPage = () => {
             <div className="d-grid gap-2">
                 <button 
                 className="btn btn-primary"
-                onClick={handleImpresion}
                 disabled={listaCompras<1}
+                onClick={handleBuy}
+                >
+                COMPRAR</button>
+                {preferenceId && < Wallet initialization={{ preferenceId }} />}
 
-                >COMPRAR</button>
+
             </div>
         </>
     )
