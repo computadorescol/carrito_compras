@@ -1,6 +1,7 @@
 Link al curso de React: [REACT DESDE CERO por Sergie Code](https://youtu.be/ladwC6Lrs-M)
 
 # Tutorial para hacer carrito de compras en React
+esta branch feature-1 esta disenada por Carlos Julio en Junio 2025
 
 Este tutorial te guiará paso a paso para crear un carrito de compras en React utilizando las siguientes tecnologías y estructuras:
 
