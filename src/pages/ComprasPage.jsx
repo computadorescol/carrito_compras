@@ -5,6 +5,8 @@ import { CarritoContext } from "../context/CarritoContext"
 import { useState } from  "react" ;
 import axios from "axios";
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+import '../styles/comprasPage.css';
+
 
 export const ComprasPage = () => {
 
@@ -47,7 +49,8 @@ export const ComprasPage = () => {
 
   return (
     <>
-    <h1>Compras: </h1>
+    {/*este h1 lo puse yo */}
+    <h1 className="titulo-compras" >Las Compras: </h1>
     <hr />
 
     {productos.map(producto => (
