@@ -1,4 +1,7 @@
 .titulo-compras{
     margin : 5px;
     color : #3d2da4;
+    border : 3px;
+    border-style: solid;
+    border-radius: 10px; 
 }
