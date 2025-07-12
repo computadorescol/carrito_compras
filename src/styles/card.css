@@ -21,6 +21,10 @@
   
   .tarjeta-titulo {
     margin: 0;
+    font-family: 'Arial Narrow' , 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif sans-serif 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color : #8f1515;
   }
   
   .tarjeta-descripcion {

@@ -50,7 +50,7 @@ export const ComprasPage = () => {
   return (
     <>
     {/*este h1 className  lo puse yo */}
-    <h1 className="titulo-compras" >Las Compras: </h1>
+  <h1 className="titulo-compras" >Las Compras:    </h1>
     <hr />
 
     {productos.map(producto => (
